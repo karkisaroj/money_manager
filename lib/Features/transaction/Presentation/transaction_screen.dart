@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager/Features/transaction/Core/add_expense.dart';
 import 'package:money_manager/Features/transaction/Widget/calendar.dart';
 import 'package:money_manager/Features/transaction/Widget/daily_money.dart';
+import 'package:page_transition/page_transition.dart';
 
 class TransactionScreen extends StatefulWidget {
   const TransactionScreen({super.key});
@@ -230,7 +232,16 @@ class _TransactionScreenState extends State<TransactionScreen>
           ),
           SizedBox(width: 20),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.bottomToTop,
+                  duration: Duration(milliseconds: 300),
+                  child: AddExpense(),
+                ),
+              );
+            },
             shape: CircleBorder(),
             backgroundColor: Colors.red,
             child: Icon(Icons.add, color: Colors.white),
