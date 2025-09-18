@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Features/transaction/Core/bottom_nav.dart';
 import 'package:money_manager/Features/transaction/Widget/calendar.dart';
 import 'package:money_manager/Features/transaction/Widget/daily_money.dart';
 
@@ -219,7 +218,25 @@ class _TransactionScreenState extends State<TransactionScreen>
           Center(child: Text("Notes for ${_months[_selectedMonthIndex]}")),
         ],
       ),
-      bottomNavigationBar: BottomNav(),
+      floatingActionButton: Row(
+        children: [
+          Spacer(),
+
+          FloatingActionButton(
+            onPressed: () {},
+            shape: CircleBorder(),
+            backgroundColor: Colors.grey,
+            child: Icon(Icons.copy_sharp, color: Colors.white),
+          ),
+          SizedBox(width: 20),
+          FloatingActionButton(
+            onPressed: () {},
+            shape: CircleBorder(),
+            backgroundColor: Colors.red,
+            child: Icon(Icons.add, color: Colors.white),
+          ),
+        ],
+      ),
     );
   }
 }

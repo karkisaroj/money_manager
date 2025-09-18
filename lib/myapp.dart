@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Features/transaction/Presentation/transaction_screen.dart';
+import 'package:money_manager/Main/home_screen.dart';
 
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
@@ -15,7 +15,7 @@ class Myapp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: TransactionScreen(),
+      home: HomeScreen(),
     );
   }
 }
