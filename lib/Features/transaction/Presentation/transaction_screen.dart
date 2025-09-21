@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Core/add_expense.dart';
+import 'package:money_manager/Core/money_adition.dart';
 import 'package:money_manager/Features/transaction/Widget/calendar.dart';
 import 'package:money_manager/Features/transaction/Widget/daily_money.dart';
 import 'package:page_transition/page_transition.dart';
@@ -227,7 +227,7 @@ class _TransactionScreenState extends State<TransactionScreen>
             PageTransition(
               type: PageTransitionType.bottomToTop,
               duration: Duration(milliseconds: 300),
-              child: AddExpense(),
+              child: MoneyAdition(),
             ),
           );
         },

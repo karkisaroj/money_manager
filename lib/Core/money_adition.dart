@@ -43,7 +43,7 @@ class _MoneyAditionState extends State<MoneyAdition> {
           },
           icon: Icon(Icons.arrow_back_ios_new),
         ),
-        title: Text("Expense"),
+        title: Text(""),
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(48),
