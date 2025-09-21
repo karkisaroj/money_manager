@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Features/transaction/Presentation/transaction_screen.dart';
-import 'package:money_manager/Features/transaction/Core/money_adition.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:money_manager/Core/money_adition.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});

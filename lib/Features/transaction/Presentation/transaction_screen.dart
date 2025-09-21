@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Features/transaction/Core/add_expense.dart';
+import 'package:money_manager/Core/add_expense.dart';
 import 'package:money_manager/Features/transaction/Widget/calendar.dart';
 import 'package:money_manager/Features/transaction/Widget/daily_money.dart';
 import 'package:page_transition/page_transition.dart';
@@ -220,33 +220,20 @@ class _TransactionScreenState extends State<TransactionScreen>
           Center(child: Text("Notes for ${_months[_selectedMonthIndex]}")),
         ],
       ),
-      floatingActionButton: Row(
-        children: [
-          Spacer(),
-
-          FloatingActionButton(
-            onPressed: () {},
-            shape: CircleBorder(),
-            backgroundColor: Colors.grey,
-            child: Icon(Icons.copy_sharp, color: Colors.white),
-          ),
-          SizedBox(width: 20),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  duration: Duration(milliseconds: 300),
-                  child: AddExpense(),
-                ),
-              );
-            },
-            shape: CircleBorder(),
-            backgroundColor: Colors.red,
-            child: Icon(Icons.add, color: Colors.white),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.bottomToTop,
+              duration: Duration(milliseconds: 300),
+              child: AddExpense(),
+            ),
+          );
+        },
+        shape: CircleBorder(),
+        backgroundColor: Colors.red,
+        child: Icon(Icons.add, color: Colors.white),
       ),
     );
   }

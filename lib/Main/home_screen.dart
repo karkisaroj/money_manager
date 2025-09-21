@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_manager/Features/Accounts/Presentation/accounts_screen.dart';
 import 'package:money_manager/Features/Configuration/Presentation/configuration_screen.dart';
 import 'package:money_manager/Features/Stats/Presentation/stats_screen.dart';
-import 'package:money_manager/Features/transaction/Core/bottom_nav.dart';
+import 'package:money_manager/Core/bottom_nav.dart';
 import 'package:money_manager/Features/transaction/Presentation/transaction_screen.dart';
 
 class HomeScreen extends StatefulWidget {

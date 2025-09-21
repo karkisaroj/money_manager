@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager/Features/transaction/Presentation/transaction_screen.dart';
-import 'package:money_manager/Features/transaction/Widget/Income_addition.dart';
-import 'package:money_manager/Features/transaction/Widget/expense_addition.dart';
+import 'package:money_manager/Features/transaction/Widget/income_addition.dart';
+import 'package:money_manager/Features/transaction/Widget/money_addition.dart';
 import 'package:money_manager/Features/transaction/Widget/transfer_money.dart';
 import 'package:page_transition/page_transition.dart';
 
