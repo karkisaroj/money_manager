@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager/Features/Stats/Domain/piedata.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class StatsScreen extends StatelessWidget {
   const StatsScreen({super.key});
@@ -9,7 +11,6 @@ class StatsScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Stats')),
       body: Column(
         children: [
-          // Tab buttons
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Row(
@@ -23,7 +24,6 @@ class StatsScreen extends StatelessWidget {
               ],
             ),
           ),
-          // Month selector
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -35,14 +35,31 @@ class StatsScreen extends StatelessWidget {
               IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
             ],
           ),
-          // Chart area placeholder
           Container(
             height: 180,
             margin: const EdgeInsets.symmetric(vertical: 12),
-            color: Colors.grey[200],
-            child: const Center(child: Text('Pie/Bar Chart Here')),
+            color: Colors.black,
+            child: SfCircularChart(
+              legend: Legend(isVisible: true),
+              series: <PieSeries<PieData, String>>[
+                PieSeries<PieData, String>(
+                  dataSource: [
+                    PieData('Apparel', 1046.76),
+                    PieData('Household', 315.48),
+                    PieData('Education', 300.99),
+                    PieData('Transportation', 200.00),
+                    PieData('Gift', 145.36),
+                    PieData('Health', 141.36),
+                    PieData('Culture', 99.99),
+                  ],
+                  xValueMapper: (PieData data, _) => data.category,
+                  yValueMapper: (PieData data, _) => data.value,
+                  dataLabelSettings: DataLabelSettings(isVisible: true),
+                ),
+              ],
+            ),
           ),
-          // List of categories/expenses
+
           Expanded(
             child: ListView(
               children: [
@@ -52,7 +69,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('42%'),
                   ),
                   title: Text('Apparel'),
-                  trailing: Text('1,046.76'),
+                  trailing: Text('1,046.76'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -60,7 +77,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('12%'),
                   ),
                   title: Text('Household'),
-                  trailing: Text('315.48'),
+                  trailing: Text('315.48'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -68,7 +85,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('12%'),
                   ),
                   title: Text('Education'),
-                  trailing: Text('300.99'),
+                  trailing: Text('300.99'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -76,7 +93,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('8%'),
                   ),
                   title: Text('Transportation'),
-                  trailing: Text('200.00'),
+                  trailing: Text('200.00'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -84,7 +101,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('5%'),
                   ),
                   title: Text('Gift'),
-                  trailing: Text('145.36'),
+                  trailing: Text('145.36'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -92,7 +109,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('5%'),
                   ),
                   title: Text('Health'),
-                  trailing: Text('141.36'),
+                  trailing: Text('141.36'),
                 ),
                 ListTile(
                   leading: CircleAvatar(
@@ -100,7 +117,7 @@ class StatsScreen extends StatelessWidget {
                     child: Text('4%'),
                   ),
                   title: Text('Culture'),
-                  trailing: Text('99.99'),
+                  trailing: Text('99.99'),
                 ),
               ],
             ),
