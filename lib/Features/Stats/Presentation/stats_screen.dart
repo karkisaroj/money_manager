@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/Features/Stats/Domain/piedata.dart';
+import 'package:money_manager/Features/Stats/Data/piedata.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class StatsScreen extends StatelessWidget {
